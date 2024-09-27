@@ -28,21 +28,26 @@ export class Film {
     rental_duration:number;
 
     @Column('decimal', { // Corrección para manejar decimales en precios
-        precision: 5,
+        precision: 4,
         scale: 2,
         default: 4.99
     })
     rental_rate: number;
 
     @Column('decimal', {
-        precision: 5,
+        precision: 4,
         scale: 2,
         default: 19.99
     })
     replacement_cost: number;
 
     @UpdateDateColumn()
-    last_update: Date
+    last_update: Date;
+
+    @Column('text', {
+        default: 'G'
+    })
+    rating: string;
 
 
 }
