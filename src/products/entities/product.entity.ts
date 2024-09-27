@@ -34,6 +34,9 @@ export class Film {
     })
     rental_rate: number;
 
+    @Column('smallint')
+    lenght: number;
+
     @Column('decimal', {
         precision: 4,
         scale: 2,
@@ -41,13 +44,15 @@ export class Film {
     })
     replacement_cost: number;
 
-    @UpdateDateColumn()
-    last_update: Date;
-
     @Column('text', {
         default: 'G'
     })
     rating: string;
 
+    @UpdateDateColumn()
+    last_update: Date;
+
+    @Column('text')
+    special_features: string;
 
 }
