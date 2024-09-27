@@ -23,11 +23,6 @@ export class Film {
     }) // Corrección para años
     release_year:number;
 
-    @Column('smallint',{
-        nullable: false
-    })
-    language_id: number;
-
     @Column('smallint', {
         default: 3,
     })
