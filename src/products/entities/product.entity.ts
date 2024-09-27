@@ -8,18 +8,24 @@ export class Film {
 
     @Column('character varying', {
         unique: true,
+        nullable: false,
     })
     title:string;
 
     @Column('text', {
-        unique: true
+        unique: true,
+        nullable: true
     })
     description:string;
 
-    @Column('smallint') // Corrección para años
+    @Column('smallint', {
+        nullable: false,
+    }) // Corrección para años
     release_year:number;
 
-    @Column('smallint')
+    @Column('smallint',{
+        nullable: false
+    })
     language_id: number;
 
     @Column('smallint', {
@@ -52,7 +58,19 @@ export class Film {
     @UpdateDateColumn()
     last_update: Date;
 
-    @Column('text')
+    @Column('text',{
+        nullable: true
+    })
     special_features: string;
+    
+    @Column('text',{
+        unique: true
+    })
+    slug:string;
+
+    @Column('int',{
+        default: 0
+    })
+    stock: number;
 
 }
